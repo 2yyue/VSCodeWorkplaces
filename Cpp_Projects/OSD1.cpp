@@ -438,12 +438,12 @@ void print(PCB *head, PCB *finish, int op)
              << "|" << setw(10) << "priority"
              << "|" << setw(15) << "state"
              << "|" << endl;
-        Temp = head->next;
+        Temp = head;
         Node = finish;
-        while (Temp != NULL)
+        while (Temp->next != NULL)
         {
-            cout << setw(8) << Temp->name << "|" << setw(18) << Temp->cputime << "|" << setw(10) << Temp->needtime << "|" << setw(10) << Temp->prio << "|" << setw(15) << Temp->state << "|" << endl;
             Temp = Temp->next;
+            cout << setw(8) << Temp->name << "|" << setw(18) << Temp->cputime << "|" << setw(10) << Temp->needtime << "|" << setw(10) << Temp->prio << "|" << setw(15) << Temp->state << "|" << endl;
         }
         /*
         * delete(Temp);
@@ -465,7 +465,7 @@ void print(PCB *head, PCB *finish, int op)
         cout << setw(8) << "进程名"
              << "|" << setw(18) << "已占用CPU时间片数"
              << "|" << setw(10) << "剩余时间"
-             << "|" << setw(10) << "最小单位时间片数"
+             << "|" << setw(10) << "时间片"
              << "|" << setw(15) << "当前进程状态"
              << "|" << endl;
         cout << setw(8) << "name"
@@ -474,12 +474,12 @@ void print(PCB *head, PCB *finish, int op)
              << "|" << setw(10) << "round"
              << "|" << setw(15) << "state"
              << "|" << endl;
-        Temp = head->next;
+        Temp = head;
         Node = finish;
-        while (Temp != NULL)
+        while (Temp->next != NULL)
         {
-            cout << setw(8) << Temp->name << "|" << setw(18) << Temp->cputime << "|" << setw(10) << Temp->needtime << "|" << setw(10) << Temp->round << "|" << setw(15) << Temp->state << "|" << endl;
             Temp = Temp->next;
+            cout << setw(8) << Temp->name << "|" << setw(18) << Temp->cputime << "|" << setw(10) << Temp->needtime << "|" << setw(10) << Temp->round << "|" << setw(15) << Temp->state << "|" << endl;
         }
         /*
         * delete(Temp);
